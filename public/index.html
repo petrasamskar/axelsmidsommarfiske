@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html ng-app="midsummerFishing">
+<head>
+<title>Axels midsommarfiske</title>
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="mycss.css">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+<script src="mainController.js"></script>
+<script src="rulesController.js"></script>
+<script src="adminController.js"></script>
+<script src="imagesController.js"></script>
+<script src="countdown.js"></script>
+
+</head>
+<body ng-controller="mainController">
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: isActive('/')}"><a ui-sref="main">Hem</a></li>
+                <li ng-class="{active: isActive('/rules')}"><a ui-sref="rules">Regler och stadgar</a></li>
+                <li ng-class="{active: isActive('/images')}"><a ui-sref="images">Bilder</a></li>
+                <li><div id="clockdiv"></div></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--<div ui-view>-->
+<div class="container">        
+    <div class="jumbotron" ui-view></div>
+    
+    <!--<hr>-->
+    <div class="row">
+        <div class="col-sm-12">
+            <!--<footer>-->
+                <p>© Copyright 2015 Sämskar</p>
+            <!--</footer>-->
+        </div>
+    </div>
+</div>
+<!--</div>-->
+
+</body>
+</html>                                     
