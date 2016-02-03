@@ -70,10 +70,11 @@
 
     //get all images
     app.get('/api/images', function(req, res) {
+        console.log('hej');
         fs.readdir('./public/fishingimages', function(err, files) {
             if (err) 
                 res.send(err);
-            
+           console.log(files); 
            res.json(files); 
         });
 
