@@ -1,8 +1,9 @@
 function adminController($scope, $http) {
 	
 	$scope.formData = {};
-	
-	$scope.processForm = function() {
+//	$scope.processForm = function() {
+
+	$scope.processForm = function(formData) {
 		 $http({
 		  method  : 'POST',
 		  url     : '/api/adscores',
@@ -12,15 +13,14 @@ function adminController($scope, $http) {
 		  .success(function(data) {
 		    console.log(data);
 
-		    if (!data.success) {
-		      // if not successful, bind errors to error variables
-		      $scope.errorName = data.errors.name;
-		      $scope.errorSuperhero = data.errors.superheroAlias;
-		    } else {
-		      // if successful, bind success message to message
-		      $scope.message = data.message;
-		    }
+		    //reset formdata
+		    resetFormData();
+
 		  });
     };
+
+    function resetFormData() {
+    	$scope.formData = {};
+    }
     
 }

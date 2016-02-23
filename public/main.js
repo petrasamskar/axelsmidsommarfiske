@@ -1,10 +1,5 @@
 var app = angular.module('midsummerFishing', ['ui.router']);
 
-$(".nav a").on("click", function(){
-   $(".nav").find(".active").removeClass("active");
-   $(this).parent().addClass("active");
-});
-
 app.config(function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise('/');

@@ -41,11 +41,15 @@ function mainController($scope, $http, $location) {
      return active;
     };
 
-    // deletes a specific score/participant
-    $scope.deleteScore = function(scoreId) {
-        $http.delete("/api/participant/" + scoreId).then(function (response) {
+    $scope.deleteScore = function(participant) {
+        
+        $http.delete("/api/participant/" + participant._id).then(function (response) {
             return response.data;
         });
+        //här vill man uppdatera listan också HUR??
+        //$participants.splice(participant._id, 1);
+        
+
     };
     
 
