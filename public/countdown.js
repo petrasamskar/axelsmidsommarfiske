@@ -12,7 +12,7 @@ function getDaysRemaining(endtime){
 function updateClock(endtime){
   var t = getDaysRemaining(endtime);
     var clock = document.getElementById('clockdiv');
-    clock.innerHTML = 'Nästa tävling om: ' + t + ' dagar' 
+    clock.innerHTML = '<span id="clock" class="label label-danger">Nästa tävling om: ' + t + ' dagar</span>' 
 
   
   if(t.total<=0){

@@ -1,4 +1,5 @@
 function imagesController($scope, $http) {
+	$scope.images = {}
     // when landing on the page, get all years and show them
      $http.get('/api/images')
         .success(function(data) {

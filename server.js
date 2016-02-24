@@ -60,7 +60,6 @@
         fs.readdir('./public/fishingimages', function(err, files) {
             if (err) 
                 res.send(err);
-           console.log(files); 
            res.json(files); 
         });
 

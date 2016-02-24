@@ -5,6 +5,8 @@
 <title>Axels midsommarfiske</title>
 
 <meta charset="UTF-8">
+<meta name="description" content="Axels midsommarfiske, en fisketävling i Norrland">
+<meta name="author" content="Petra Sämskar">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
@@ -31,17 +33,18 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-                <li ng-class="{active: isActive('/')}"><a ui-sref="main">Hem</a></li>
+                <li ng-class="{active: isActive('/')}"><a ui-sref="main" class="glyphicon glyphicon-home"></a></li>
                 <li ng-class="{active: isActive('/rules')}"><a ui-sref="rules">Regler och stadgar</a></li>
                 <li ng-class="{active: isActive('/images')}"><a ui-sref="images">Bilder</a></li>
-                <li><div id="clockdiv"></div></li>
+                <!--<li><div id="clockdiv"></div></li>-->
             </ul>
+            <div id="clockdiv"></div>
         </div>
 
-    </div>
+    </div> 
 </nav>
 <!--<div ui-view>-->
-<div class="container">        
+<div class="container">     
     <div class="jumbotron" ui-view></div>
     
     <!--<hr>-->

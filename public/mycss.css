@@ -34,8 +34,16 @@ h2 {
 }
 
 #clockdiv {
-	padding-top: 15px;
-	color:red;
-	padding-left: 20px;
+	padding-top: 14px;
+	padding-bottom: 14px;
 }
+#clock {
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+li {
+	padding-right: 10px;
+}
+
 
