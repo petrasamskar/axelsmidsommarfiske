@@ -25,4 +25,9 @@ app.config(function($stateProvider, $urlRouterProvider){
             templateUrl: 'images.html',
             controller: 'imagesController'
         })
+        .state('statistics', {
+            url: '/statistics',
+            templateUrl: 'statistics.html',
+            controller: 'statisticsController'
+        })
 });

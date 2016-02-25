@@ -24,6 +24,7 @@
 <script src="rulesController.js"></script>
 <script src="adminController.js"></script>
 <script src="imagesController.js"></script>
+<script src="statisticsController.js"></script>
 <script src="countdown.js"></script>
 
 </head>
@@ -44,6 +45,8 @@
                 <li ng-class="{active: isActive('/')}"><a class="glyphicon glyphicon-home" ui-sref="main"></a></li>
                 <li ng-class="{active: isActive('/rules')}"><a ui-sref="rules">Regler och stadgar</a></li>
                 <li ng-class="{active: isActive('/images')}"><a ui-sref="images">Bilder</a></li>
+                <li ng-class="{active: isActive('/statistics')}"><a ui-sref="statistics">Statistik</a></li>
+
             </ul>
             <div class="navbar-brand" id="clockdiv"></div>
         </div>

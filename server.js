@@ -55,6 +55,28 @@
         });
     });
 
+    //will return all winners and number of wins
+    app.get('/api/winners', function(req, res) {  
+
+        Participant.aggregate([
+            { $match: {
+                place: 1
+            }},
+            { $group: {
+                _id: "$name",
+                total: { $sum: "$place"  }
+            }},
+            { $sort : { total : -1 } }
+            ], function (err, winners) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                res.json(winners);
+            });
+
+    });
+
     //will get all images from the folder
     app.get('/api/images', function(req, res) {
         fs.readdir('./public/fishingimages', function(err, files) {
