@@ -28,26 +28,34 @@
 
 </head>
 <body ng-controller="mainController">
-<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="navbar-collapse" id="navbarCollapse">
+
+<div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-class="{active: isActive('/')}"><a ui-sref="main" class="glyphicon glyphicon-home"></a></li>
+                <li ng-class="{active: isActive('/')}"><a class="glyphicon glyphicon-home" ui-sref="main"></a></li>
                 <li ng-class="{active: isActive('/rules')}"><a ui-sref="rules">Regler och stadgar</a></li>
                 <li ng-class="{active: isActive('/images')}"><a ui-sref="images">Bilder</a></li>
-                <!--<li><div id="clockdiv"></div></li>-->
             </ul>
-            <div id="clockdiv"></div>
+            <div class="navbar-brand" id="clockdiv"></div>
         </div>
+    </div>
+</div>
 
-    </div> 
-</nav>
+
+
 <!--<div ui-view>-->
 <div class="container">     
     <div class="jumbotron" ui-view></div>
     
-    <!--<hr>-->
     <div class="row">
         <div class="col-sm-12">
             <!--<footer>-->
@@ -56,7 +64,6 @@
         </div>
     </div>
 </div>
-<!--</div>-->
 
 </body>
 </html>                                     
