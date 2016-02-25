@@ -40,7 +40,6 @@
             if (err)
                 res.send(err)
             res.json(years.sort().reverse()); // return all years in JSON format
-            console.log(years);
         });
     });
 
@@ -66,12 +65,10 @@
                 _id: "$name",
                 total: { $sum: "$place"  }
             }},
-            { $sort : { total : -1 } }
+            { $sort : { total : -1, _id: 1 } }
             ], function (err, winners) {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
+                if (err) 
+                    res.send(err)
                 res.json(winners);
             });
 

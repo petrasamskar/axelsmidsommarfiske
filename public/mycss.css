@@ -42,5 +42,8 @@ body {
 li {
 	padding-right: 10px;
 }
+thead {
+	font-weight: bold;
+}
 
 
