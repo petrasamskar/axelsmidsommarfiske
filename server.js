@@ -13,6 +13,7 @@
     // configuration =================
 
     mongoose.connect('mongodb://localhost/midsummer');              // connect to mongoDB database
+    //mongoose.connect('mongodb://midsummer:morning-mountain4@ds062818.mlab.com:62818/midsummer');
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
