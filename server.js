@@ -11,9 +11,18 @@
     var path = require('path');
 
     // configuration =================
+    //mongoose.connect('mongodb://localhost/midsummer');              // connect to mongoDB database
+    mongoose.connect('mongodb://midsummer:morning-mountain4@ds062818.mlab.com:62818/midsummer');
 
-    mongoose.connect('mongodb://localhost/midsummer');              // connect to mongoDB database
-    //mongoose.connect('mongodb://midsummer:morning-mountain4@ds062818.mlab.com:62818/midsummer');
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function() {
+        // we're connected!
+    });
+
+
+
+
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
