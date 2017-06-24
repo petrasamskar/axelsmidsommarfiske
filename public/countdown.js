@@ -1,5 +1,5 @@
 //counter, not implemented yet
-$(document).ready(function(){ updateClock('2017-06-23'); 
+$(document).ready(function(){ updateClock('2018-06-22'); 
  }) 
 
 
