@@ -1,3 +1,0 @@
-function rulesController($scope, $http) {
-    
-}
