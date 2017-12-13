@@ -3,13 +3,11 @@ import React from 'react';
 export default class Clock extends React.Component {
 
 _getDaysRemaining(endtime){
-    console.log('_getDaysRemaining called')
     var t = Date.parse(endtime) - Date.parse(new Date());
     return Math.floor( t/(1000*60*60*24) );
 }
 
 _updateClock(){
-    console.log('_updateClock called');
     var t = this._getDaysRemaining('2018-06-22');
  
     if(t.total<=0){
@@ -19,6 +17,7 @@ _updateClock(){
 }
 
   render() {
+      console.log('Clock is rendered');
     return (
         <span className="label label-danger" id="clock" >Nästa tävling om {this._updateClock()} dagar</span>    
     );

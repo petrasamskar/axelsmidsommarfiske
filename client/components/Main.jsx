@@ -5,11 +5,17 @@ import {
   HashRouter
 } from "react-router-dom";
 
+
 import Home from "./Home.jsx";
 import Rules from "./Rules.jsx";
+import Statistics from "./Statistics.jsx";
+import Competition from "./Competition.jsx";
+
+
 
 class Main extends Component {
   render() {
+    console.log('Main is rendered');
     return (
       <HashRouter>
 
@@ -42,12 +48,14 @@ class Main extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/rules" component={Rules} />
                 <Route path="/images" component={Home} />
-                <Route path="/statistics" component={Home} />
+                <Route path="/statistics" component={Statistics} />
+                <Route path="/competition/:year" component={Competition} />
+
 
               </div>
               <div className="row">
                 <div className="col-sm-12">
-                  <p>© Copyright 2015 Sämskar</p>
+                  <p>© Copyright 2015 Sämskar</p> 
                 </div>
               </div>
             </div>
@@ -58,5 +66,6 @@ class Main extends Component {
     );
   }
 }
+
 
 export default Main;
