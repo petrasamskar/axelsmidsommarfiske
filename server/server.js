@@ -1,14 +1,10 @@
-//dependecies
 var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
-//and create our instances
 var app = express();
 var router = express.Router();
 
-//set our port to either a predetermined port number if you have set 
-//it up, or 3001
 var port = process.env.API_PORT || 3001;
 //now we should configure the API to use bodyParser and look for 
 //JSON data in the request body
@@ -42,7 +38,7 @@ app.use(function (req, res, next) {
 
 
 
-// db 
+// db ======================
 //mongoose.connect('mongodb://localhost/midsummer');              // connect to mongoDB database
 mongoose.connect('mongodb://midsummer:morning-mountain4@ds062818.mlab.com:62818/midsummer');
 
@@ -81,6 +77,30 @@ app.get('/api/competition', function (req, res) {
             res.send(err)
         res.json(participants); // return all participants in JSON format
     });
+});
+
+//will return all winners and number of wins
+app.get('/api/winners', function (req, res) {
+
+    Participant.aggregate([
+        {
+            $match: {
+                place: 1
+            }
+        },
+        {
+            $group: {
+                _id: "$name",
+                total: { $sum: "$place" }
+            }
+        },
+        { $sort: { total: -1, _id: 1 } }
+    ], function (err, winners) {
+        if (err)
+            res.send(err)
+        res.json(winners);
+    });
+
 });
 
 

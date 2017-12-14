@@ -52,8 +52,6 @@ class Competition extends React.Component {
 
 
 const Participant = (props) => {
-  console.log('props:' + props);
-  console.log(props.score);
   return (
     <tr>
       <td>

@@ -8,14 +8,13 @@ import {
 
 import Home from "./Home.jsx";
 import Rules from "./Rules.jsx";
-import Statistics from "./Statistics.jsx";
+import Winners from "./Winners.jsx";
 import Competition from "./Competition.jsx";
 
 
 
 class Main extends Component {
   render() {
-    console.log('Main is rendered');
     return (
       <HashRouter>
 
@@ -35,7 +34,7 @@ class Main extends Component {
                   <li><NavLink className="glyphicon glyphicon-home" to="/" /></li>
                   <li><NavLink to="/rules">Regler och stadgar</NavLink></li>
                   <li><NavLink to="/images">Bilder</NavLink></li>
-                  <li><NavLink to="/statistics">Statistik</NavLink></li>
+                  <li><NavLink to="/winners">Statistik</NavLink></li>
                 </ul>
                 <div className="navbar-collapse collapse" id="clockdiv"></div>
               </div>
@@ -48,7 +47,7 @@ class Main extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/rules" component={Rules} />
                 <Route path="/images" component={Home} />
-                <Route path="/statistics" component={Statistics} />
+                <Route path="/winners" component={Winners} />
                 <Route path="/competition/:year" component={Competition} />
 
 
