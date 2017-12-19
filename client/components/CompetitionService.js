@@ -15,3 +15,8 @@ export function getWinners() {
   return axios.get('http://localhost:3001/api/winners');
 
 }
+
+export function getImages() {
+  console.log('getimages');
+  return axios.get('http://localhost:3001/api/images');
+}

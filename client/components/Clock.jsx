@@ -17,7 +17,6 @@ _updateClock(){
 }
 
   render() {
-      console.log('Clock is rendered');
     return (
         <span className="label label-danger" id="clock" >Nästa tävling om {this._updateClock()} dagar</span>    
     );

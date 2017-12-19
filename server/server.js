@@ -1,6 +1,8 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+var fs = require("fs");
+var path = require("path");//behövs den??
 
 var app = express();
 var router = express.Router();
@@ -100,6 +102,17 @@ app.get('/api/winners', function (req, res) {
             res.send(err)
         res.json(winners);
     });
+
+});
+
+//will get all images from the folder
+app.get('/api/images', function(req, res) {
+    fs.readdir('../client/images/other', function(err, files) {
+        if (err) 
+            res.send(err);
+       res.json(files); 
+    });
+
 
 });
 

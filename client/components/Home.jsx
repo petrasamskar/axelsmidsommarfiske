@@ -1,25 +1,24 @@
 
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import {getYears} from "./CompetitionService.js"
-
+import { Link } from "react-router-dom";
+import { getYears } from "./CompetitionService.js"
 
 
 class Home extends React.Component {
     constructor() {
         super();
         this.state = { years: [] };
-      }
+    }
 
-      componentDidMount() {
+    componentDidMount() {
         getYears().then((result) => {
-          let years = Array.from(result.data);
-          this.setState({years: years});
+            let years = Array.from(result.data);
+            this.setState({ years: years });
         });
-      }
+    }
 
     render() {
-        
+
         return (
             <div>
 
@@ -32,31 +31,31 @@ class Home extends React.Component {
                 <p>Tröstpriset "Trollet" delas också ut till en lycklig vinnare.</p>
 
 
-                <div className="row" id="tavling">
-                    <div className="col-sm-8 col-md-12 col-lg-12">
-                        <h2>Resultat</h2>
-                        <p>Välj år för att se resultatlistan.</p>
+                <div className="dropdown show">
+                    <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Välj År
+                </a>
 
-                        <div className="panel-group" id="accordion">
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {this.state.years.map(year => <Year year={year} key={year} />)}
-
-                        </div>
-
                     </div>
                 </div>
+
 
             </div>
         );
     }
-    
+
 }
+
+
 const Year = (props) => {
     return (
-      <div>
-        <Link to={'competition/' + props.year}>{props.year}</Link>
-      </div>);
-    
-  }
+        <Link className="dropdown-item" to={'competition/' + props.year}>{props.year}</Link>
+    );
+
+}
+
 
 export default Home;
 
