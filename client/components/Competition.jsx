@@ -29,11 +29,11 @@ class Competition extends React.Component {
 
           <h2>Resultat {this.props.match.params.year}</h2>
         </div>
-
+{/* todo fixa in fallbackimage */}
         <div className="card" >
           <ReactImageFallback
             src={"./client/images/group/group_" + this.props.match.params.year + ".JPG"}
-            fallbackImage="./client/images/other/DSC_0012.JPG"
+            fallbackImage="./client/images/no_image.jpg"
             className="card-img-top" />
           <div className="card-body">
             <div className="card-text">

@@ -11,7 +11,7 @@ import Rules from "./Rules.jsx";
 import Winners from "./Winners.jsx";
 import Competition from "./Competition.jsx";
 import Images from "./Images.jsx";
-
+import Admin from "./Admin.jsx";
 
 
 class Main extends Component {
@@ -23,16 +23,13 @@ class Main extends Component {
 
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                  <a className="nav-item nav-link" href="#">Hem <span className="sr-only"></span></a>
+                  <a className="navbar-brand mb-0 h1" href="#">Axels midsommarfiske <span className="sr-only"></span></a>
                   <a className="nav-item nav-link" href="#/rules">Regler och stadgar</a>
                   <a className="nav-item nav-link" href="#/images">Bilder</a>
                   <a className="nav-item nav-link" href="#/winners">Statistik</a>
-                  <div className="navbar-collapse collapse" id="clockdiv"></div>
+                  <div className="nav-item nav-link" id="clockdiv"></div>
                 </div>
               </div>
             </nav>
@@ -47,6 +44,7 @@ class Main extends Component {
                 <Route path="/images" component={Images} />
                 <Route path="/winners" component={Winners} />
                 <Route path="/competition/:year" component={Competition} />
+                <Route path="/admin" component={Admin}/> 
               </div>
             </div>
           </div>

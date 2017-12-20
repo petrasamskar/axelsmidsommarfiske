@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { getImages } from "./CompetitionService.js"
 
-
-
 class Images extends React.Component {
 
     constructor() {
@@ -14,12 +12,18 @@ class Images extends React.Component {
     componentDidMount() {
         getImages().then((result) => {
             let images = Array.from(result.data);
+            let first = images[0];
+            this.setState({first:first});
 
-            this.setState({ images: images });
+            let remainingImages = images.slice(1, images.length);
+            this.setState({ images: remainingImages });
+            
         });
     }
 
+   
     render() {
+        
         return (
             <div>
                 <div className="page-header">
@@ -27,14 +31,12 @@ class Images extends React.Component {
                     <h2>Bilder</h2>
                 </div>
 
-
-                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                    <ol className="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
+                
+             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
+                        <div className="carousel-item active ">
+                            <img className="d-block w-100" src={'client/images/other/' + this.state.first} />
+                        </div>
                         {this.state.images.map(image => <Image name={image} key={image} />)}
 
                     </div>
@@ -46,8 +48,7 @@ class Images extends React.Component {
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="sr-only">Next</span>
                     </a>
-                </div>
-
+                </div> 
 
             </div>
         );
@@ -55,13 +56,17 @@ class Images extends React.Component {
 }
 
 
+
+
 const Image = (props) => {
     return (
-        <div className="carousel-item active">
-            <img className="d-block w-100" id='{props.name}' src={'client/images/other/' + props.name} />
-        </div>
+         <div className="carousel-item">
+             <img className="d-block w-100"  src={'client/images/other/' + props.name} />
+         </div>
     );
 
 }
+
+
 
 export default Images

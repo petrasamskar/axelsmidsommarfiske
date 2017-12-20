@@ -18,7 +18,7 @@ _updateClock(){
 
   render() {
     return (
-        <span className="label label-danger" id="clock" >Nästa tävling om {this._updateClock()} dagar</span>    
+        <span className="badge badge-pill badge-danger" id="clock" >Nästa tävling om {this._updateClock()} dagar</span>    
     );
   }
 }

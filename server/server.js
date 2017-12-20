@@ -116,4 +116,21 @@ app.get('/api/images', function(req, res) {
 
 });
 
+//will create a new participant, gets data from form
+app.post('/api/adscores', function(req, res) {
+    var p = Participant({
+        year: req.body.year,
+        place: req.body.place, 
+        name: req.body.name,
+        score: req.body.score
+    });
+
+    //for now only log what will be saved to the database
+    console.log(p);
+    /*p.save(function(err) {
+        if (err) res.status(400).end();
+            res.send(p);
+        });*/
+});
+
 
