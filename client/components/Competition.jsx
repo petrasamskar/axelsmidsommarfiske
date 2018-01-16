@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
-import { getParticipants } from "./CompetitionService.js"
+import { getParticipants } from "./CompetitionService.js";
+import {deleteParticipant} from "./CompetitionService.js";
 import ReactImageFallback from "react-image-fallback";
 
 
@@ -20,7 +21,9 @@ class Competition extends React.Component {
     });
   }
 
+  
 
+  
 
   render() {
     return (
@@ -29,7 +32,6 @@ class Competition extends React.Component {
 
           <h2>Resultat {this.props.match.params.year}</h2>
         </div>
-{/* todo fixa in fallbackimage */}
         <div className="card" >
           <ReactImageFallback
             src={"./client/images/group/group_" + this.props.match.params.year + ".JPG"}
@@ -68,6 +70,8 @@ const Participant = (props) => {
       <td>{props.score}p</td>
     </tr>
   );
+
+  
 
 }
 

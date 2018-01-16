@@ -12,61 +12,45 @@ class Images extends React.Component {
     componentDidMount() {
         getImages().then((result) => {
             let images = Array.from(result.data);
-            let first = images[0];
-            this.setState({first:first});
-
-            let remainingImages = images.slice(1, images.length);
-            this.setState({ images: remainingImages });
-            
+            this.setState({ images: images });
         });
     }
 
-   
+
     render() {
-        
         return (
             <div>
-                <div className="page-header">
-
-                    <h2>Bilder</h2>
-                </div>
-
-                
-             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active ">
-                            <img className="d-block w-100" src={'client/images/other/' + this.state.first} />
-                        </div>
+                <div className="container gal-container">
+                    <div className="row text-center text-lg-left">
                         {this.state.images.map(image => <Image name={image} key={image} />)}
-
                     </div>
-                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="sr-only">Previous</span>
-                    </a>
-                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="sr-only">Next</span>
-                    </a>
-                </div> 
-
+                </div>
             </div>
         );
     }
 }
 
 
-
-
 const Image = (props) => {
     return (
-         <div className="carousel-item">
-             <img className="d-block w-100"  src={'client/images/other/' + props.name} />
-         </div>
+        <div className="col-md-4 col-sm-6 co-xs-12 gal-item">
+            <div className="box">
+                <a href="#" data-toggle="modal" data-target={'#' + (props.name).substring(0, (props.name).indexOf('.'))}>
+                    <img src={'client/images/other/' + props.name} />
+                </a>
+                <div className="modal fade" id={(props.name).substring(0, (props.name).indexOf('.'))} tabIndex="-1" role="dialog">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div className="modal-body">
+                                <img src={'client/images/other/' + props.name} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
-
 }
-
-
 
 export default Images

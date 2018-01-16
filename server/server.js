@@ -106,21 +106,22 @@ app.get('/api/winners', function (req, res) {
 });
 
 //will get all images from the folder
-app.get('/api/images', function(req, res) {
-    fs.readdir('../client/images/other', function(err, files) {
-        if (err) 
+app.get('/api/images', function (req, res) {
+    fs.readdir('../client/images/other', function (err, files) {
+
+        if (err)
             res.send(err);
-       res.json(files); 
+        res.json(files);
     });
 
 
 });
 
 //will create a new participant, gets data from form
-app.post('/api/adscores', function(req, res) {
+app.post('/api/adscores', function (req, res) {
     var p = Participant({
         year: req.body.year,
-        place: req.body.place, 
+        place: req.body.place,
         name: req.body.name,
         score: req.body.score
     });
@@ -132,5 +133,18 @@ app.post('/api/adscores', function(req, res) {
             res.send(p);
         });*/
 });
+
+ //will delete a specific participant/score by id
+ app.delete('/api/participant/:scoreId', function (req, res) {
+    
+    //for now only log what will be deleted
+    console.log(req.params.scoreId);
+            /*Participant.findByIdAndRemove(req.params.scoreId, function (err) {
+                if (err) res.status(400).end();
+                res.send();
+            });*/
+        });
+    
+
 
 

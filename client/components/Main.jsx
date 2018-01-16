@@ -29,7 +29,7 @@ class Main extends Component {
                   <a className="nav-item nav-link" href="#/rules">Regler och stadgar</a>
                   <a className="nav-item nav-link" href="#/images">Bilder</a>
                   <a className="nav-item nav-link" href="#/winners">Statistik</a>
-                  <div className="nav-item nav-link" id="clockdiv"></div>
+                  <div className="align-self-center" id="clockdiv"></div>
                 </div>
               </div>
             </nav>

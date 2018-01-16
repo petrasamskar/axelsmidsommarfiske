@@ -9,7 +9,6 @@ export function getYears() {
 };
 
 export function getParticipants(year) {
-  console.log('getparticipants:' + year);
   return axios.get('http://localhost:3001/api/competition?year=' + year)
   .catch(function (error) {
     console.log(error);
@@ -25,7 +24,6 @@ export function getWinners() {
 }
 
 export function getImages() {
-  console.log('getimages');
   return axios.get('http://localhost:3001/api/images')
   .catch(function (error) {
     console.log(error);
@@ -49,6 +47,13 @@ export function addParticipant(state) {
     console.log(error);
   });
 }
+
+export function deleteParticipant(participant) {
+
+  return axios.delete("/api/participant/" + participant._id).then(function (response) {
+        return response.data;
+    });
+};
 
 
 
