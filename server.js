@@ -119,6 +119,6 @@
             });
     });
     
-    var port = process.env.port || 8080;
+    var port = process.env.port || process.env.PORT || 8080;
     var server = app.listen(port);
     console.log('Web server listening on port ', port);
