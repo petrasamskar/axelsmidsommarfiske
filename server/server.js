@@ -126,23 +126,21 @@ app.post('/api/adscores', function (req, res) {
         score: req.body.score
     });
 
-    //for now only log what will be saved to the database
     console.log(p);
-    /*p.save(function(err) {
+    p.save(function(err) {
         if (err) res.status(400).end();
             res.send(p);
-        });*/
+        });
 });
 
  //will delete a specific participant/score by id
  app.delete('/api/participant/:scoreId', function (req, res) {
     
-    //for now only log what will be deleted
     console.log(req.params.scoreId);
-            /*Participant.findByIdAndRemove(req.params.scoreId, function (err) {
+            Participant.findByIdAndRemove(req.params.scoreId, function (err) {
                 if (err) res.status(400).end();
                 res.send();
-            });*/
+            });
         });
     
 

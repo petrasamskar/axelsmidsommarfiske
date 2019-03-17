@@ -8,7 +8,7 @@ _getDaysRemaining(endtime){
 }
 
 _updateClock(){
-    var t = this._getDaysRemaining('2018-06-22');
+    var t = this._getDaysRemaining('2019-06-21');
  
     if(t.total<=0){
         clearInterval(timeinterval);

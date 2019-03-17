@@ -25,7 +25,6 @@ class Admin extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('hur ser state ut??: ' + this.state.year + ',' + this.state.score + ',' + this.state.name + ',' + this.state.place);
         event.preventDefault();
         addParticipant(this.state);
     }
