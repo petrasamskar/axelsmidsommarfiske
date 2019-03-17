@@ -34,8 +34,8 @@ class Competition extends React.Component {
         </div>
         <div className="card" >
           <ReactImageFallback
-            src={"./client/images/group/group_" + this.props.match.params.year + ".JPG"}
-            fallbackImage="./client/images/no_image.jpg"
+            src={"./images/group/group_" + this.props.match.params.year + ".JPG"}
+            fallbackImage="./images/no_image.jpg"
             className="card-img-top" />
           <div className="card-body">
             <div className="card-text">
