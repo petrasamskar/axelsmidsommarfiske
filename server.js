@@ -7,6 +7,7 @@ var path = require("path");//behövs den??
 var app = express();
 var router = express.Router();
 
+app.use(express.static('build'));
 var port = process.env.API_PORT || 3001;
 //now we should configure the API to use bodyParser and look for 
 //JSON data in the request body
