@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-//todo fixa så man kan ha relativa urlar
 export function getYears() {
   return axios.get('/api/years')
   .catch(function (error) {
     console.log(error);
-  });;
+  });
 };
 
 export function getParticipants(year) {
