@@ -3,11 +3,10 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path"); //behövs den??
-
 var app = express();
-var router = express.Router();
 
-app.use(express.static("build"));
+app.use(express.static(path.join(__dirname, "/build")));
+
 //now we should configure the API to use bodyParser and look for
 //JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -136,7 +135,7 @@ app.delete("/api/participant/:scoreId", function(req, res) {
   });
 });
 
-var port = process.env.API_PORT || 3001;
+var port = process.env.PORT || 3001;
 
 app.listen(port, function() {
   console.log(`api running on port ${port}`);
