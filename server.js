@@ -3,9 +3,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path"); //behövs den??
-
 var app = express();
-var router = express.Router();
 
 app.use(express.static(path.join(__dirname, "/build")));
 
