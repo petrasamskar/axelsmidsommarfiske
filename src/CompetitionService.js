@@ -11,7 +11,7 @@ export function getParticipants(year) {
   return axios.get('/api/competition?year=' + year)
   .catch(function (error) {
     console.log(error);
-  });;
+  });
 }
 
 export function getWinners() {
