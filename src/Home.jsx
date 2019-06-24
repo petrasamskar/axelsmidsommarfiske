@@ -38,7 +38,7 @@ class Home extends React.Component {
                         <p className="card-text">Tröstpriset "Trollet" delas också ut till en lycklig vinnare.</p>
 
                     </div>
-                    <img className="card-img-top" src="./images/group/group_2018.JPG" />
+                    <img className="card-img-top" src="./images/group/group_2019.jpg" />
 
                 </div>
                 
