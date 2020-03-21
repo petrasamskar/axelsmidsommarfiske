@@ -19,16 +19,14 @@ export function getWinners() {
   .catch(function (error) {
     console.log(error);
   });
+
 }
 
-export async function getImages () {
-  console.log('getimages called!!!!!');
-  try {
-    return axios.get('images');
-  }
-  catch (error) {
+export function getImages() {
+  return axios.get('/api/images')
+  .catch(function (error) {
     console.log(error);
-  }
+  });
 }
 
 export function addParticipant(state) {
@@ -53,7 +51,7 @@ export function deleteParticipant(participant) {
 
   return axios.delete("/api/participant/" + participant._id).then(function (response) {
         return response.data;
-    })
+    });
 };
 
 

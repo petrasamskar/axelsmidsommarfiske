@@ -5,21 +5,12 @@ var fs = require("fs");
 var path = require("path"); //behövs den??
 var app = express();
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/build")));
 
 //now we should configure the API to use bodyParser and look for
 //JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 //now we can set the route path & initialize the API
 // router.get("/", function(req, res) {
@@ -113,10 +104,10 @@ app.get("/api/winners", function(req, res) {
 
 //will get all images from the folder
 app.get("/api/images", function(req, res) {
-  console.log("hej kom och hjälp mig");
-  fs.readdir("./public/images", function(err, files) {
+  fs.readdir("./public/images/other", function(err, files) {
+    console.log(res);
     if (err) res.send(err);
-    console.log(files);
+    console.log(res.json);
     res.json(files);
   });
 });
@@ -146,7 +137,7 @@ app.delete("/api/participant/:scoreId", function(req, res) {
   });
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 app.listen(port, function() {
   console.log(`api running on port ${port}`);
