@@ -1,18 +1,12 @@
 <template>
   <div class="container">
-    <div class="tile is-ancestor" :key="image" v-for="image in images">
-      <div class="tile is-parent box is-4">
-        <img :src="'images/' + image" />
+    <div class="content is-medium">
+      <h1>Bilder</h1>
+      <div class="tile is-ancestor" :key="image" v-for="image in images">
+        <div class="tile">
+          <img :src="'images/' + image" />
+        </div>
       </div>
-      <!-- <div class="tile is-parent box is-4">
-        <img src="../assets/images/bjorkspo.jpg" />
-      </div>
-      <div class="tile is-parent box is-4">
-        <img src="../assets/images/img_1081.jpg" />
-      </div>
-      <div class="tile is-parent box is-4">
-        <img src="../assets/images/img_1294.jpg" />
-      </div>-->
     </div>
   </div>
 </template>
@@ -28,9 +22,6 @@ export default {
   },
   created: function() {
     getImages().then(res => {
-      // console.log('APA!!!!!!!!!!!!!!!!');
-      // this.images = Array.from(res.data);
-      // this.images({ images: images });
       this.images = res.data;
       console.log(this.images);
     });
