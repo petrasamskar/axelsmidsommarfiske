@@ -21,7 +21,7 @@ export function getWinners() {
 export async function getImages() {
   console.log("getimages called!!!!!");
   try {
-    return axios.get("images");
+    return axios.get("api/images");
   } catch (error) {
     console.log(error);
   }
