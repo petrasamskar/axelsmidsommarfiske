@@ -2,7 +2,7 @@
   <div class="container">
     <div class="tile is-ancestor" :key="image" v-for="image in images">
       <div class="tile is-parent box is-4">
-        <img :src="'http://localhost:3000/public/images/' + image" />
+        <img :src="'images/' + image" />
       </div>
       <!-- <div class="tile is-parent box is-4">
         <img src="../assets/images/bjorkspo.jpg" />
