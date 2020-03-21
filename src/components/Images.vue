@@ -2,10 +2,10 @@
   <div class="container">
     <div class="content is-medium">
       <h1>Bilder</h1>
-      <div class="tile is-ancestor" :key="image" v-for="image in images">
-        <div class="tile">
+      <div :key="image" v-for="image in images">
+        <figure class="image">
           <img :src="'images/' + image" />
-        </div>
+        </figure>
       </div>
     </div>
   </div>
