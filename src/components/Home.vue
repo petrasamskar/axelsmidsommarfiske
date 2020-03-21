@@ -1,5 +1,5 @@
 <template>
-   <div class="container">
+  <div class="container">
     <div class="content is-medium">
       <h1>Axels midsommarfiske</h1>
       <p>
@@ -10,14 +10,14 @@
       </p>
       <p>Tröstpriset "Trollet" delas också ut till en lycklig vinnare.</p>
     </div>
-     <figure class="image is-1000x750">
+    <figure class="image is-1000x750">
       <img src="../assets/group_2019.jpg" />
-    </figure> 
-  </div> 
+    </figure>
+  </div>
 </template>
 
 <script>
- export default  {
-   name: 'Home'
- }
+export default {
+  name: "Home"
+};
 </script>
