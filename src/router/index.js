@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "@/components/Home";
 import Rules from "@/components/Rules";
 import Images from "@/components/Images";
+import Winners from "@/components/Winners";
 
 Vue.use(Router);
 
@@ -22,13 +23,13 @@ export default new Router({
       path: "/images",
       name: "Images",
       component: Images
-    }
-    /* {
-      path: '/winners',
-      name: 'Winners',
-      component: Winners
     },
     {
+      path: "/winners",
+      name: "Winners",
+      component: Winners
+    }
+    /* { 
       path: '/competition/:year',
       name: 'Competition',
       component: Competition

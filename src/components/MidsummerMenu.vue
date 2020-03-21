@@ -24,9 +24,11 @@
             >Regler och Stadgar</router-link
           >
           <router-link to="/images" class="navbar-item">Bilder</router-link>
-          <a class="navbar-item">
+          <router-link to="/winners" class="navbar-item">Statistik</router-link>
+
+          <!-- <a class="navbar-item">
             Statistik
-          </a>
+          </a> -->
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
@@ -49,9 +51,7 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="notification is-success">
-              X antal dagar till nästa tävling
-            </div>
+            <Clock />
           </div>
         </div>
       </div>
@@ -60,7 +60,11 @@
 </template>
 
 <script>
+import Clock from "./Clock.vue";
 export default {
-  name: "MidsummerMenu"
+  name: "MidsummerMenu",
+  components: {
+    Clock: Clock
+  }
 };
 </script>
