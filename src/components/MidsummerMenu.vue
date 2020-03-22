@@ -25,27 +25,11 @@
           >
           <router-link to="/images" class="navbar-item">Bilder</router-link>
           <router-link to="/winners" class="navbar-item">Statistik</router-link>
-
-          <!-- <a class="navbar-item">
-            Statistik
-          </a> -->
-
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Resultat
             </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                2019
-              </a>
-              <a class="navbar-item">
-                2018
-              </a>
-              <a class="navbar-item">
-                2017
-              </a>
-            </div>
+            <Years />
           </div>
         </div>
 
@@ -61,10 +45,13 @@
 
 <script>
 import Clock from "./Clock.vue";
+import Years from "./Years.vue";
+
 export default {
   name: "MidsummerMenu",
   components: {
-    Clock: Clock
+    Clock: Clock,
+    Years: Years
   }
 };
 </script>

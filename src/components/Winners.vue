@@ -32,9 +32,6 @@ export default {
   },
   created: function() {
     getWinners().then(result => {
-      // let winners = Array.from(result.data);
-
-      // this.setState({ winners: winners });
       this.winners = result.data;
     });
   }

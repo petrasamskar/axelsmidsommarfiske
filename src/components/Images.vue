@@ -23,7 +23,6 @@ export default {
   created: function() {
     getImages().then(res => {
       this.images = res.data;
-      console.log(this.images);
     });
   }
 };
