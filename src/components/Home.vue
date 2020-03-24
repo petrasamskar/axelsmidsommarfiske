@@ -11,7 +11,7 @@
       <p>Tröstpriset "Trollet" delas också ut till en lycklig vinnare.</p>
     </div>
     <figure class="image is-1000x750">
-      <img src="../assets/group_2019.jpg" />
+      <img src="images/group/group_2019.jpg" />
     </figure>
   </div>
 </template>

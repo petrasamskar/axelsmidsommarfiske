@@ -1,43 +1,55 @@
 <template>
   <div class="box">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-64x64">
+    <div class="columns">
+      <div class="column">
+        <figure class="image is-ratio">
           <img
-            src="https://bulma.io/images/placeholders/128x128.png"
+            :src="`images/group/group_${year}.jpg`"
             alt="Image"
+            width="200px"
+            height="100px"
           />
         </figure>
       </div>
-      <div class="media-content">
-        <div class="content">
-          <table class="table is-hoverable is-fullwidth is-striped">
-            <thead>
-              <tr>
-                <th>Deltagare/Lag</th>
-                <th>Poäng</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr :key="participant._id" v-for="participant in participants">
-                <td>{{ participant._id }}</td>
-                <td>{{ participant.total }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="column content">
+        <table class="table is-hoverable is-fullwidth is-striped">
+          <thead>
+            <tr>
+              <th>Deltagare/Lag</th>
+              <th>Poäng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr :key="participant._id" v-for="participant in participants">
+              <td>{{ participant.name }}</td>
+              <td>{{ participant.score }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </div>
   </div>
 </template>
 
 <script>
+import { getParticipants } from "../CompetitionService";
 export default {
   name: "Competition",
   data: function() {
     return {
-      participants: []
+      year: this.$route.params.year,
+      participants: [
+        {
+          name: "",
+          score: ""
+        }
+      ]
     };
+  },
+  created: function() {
+    getParticipants(this.year).then(result => {
+      this.participants = result.data;
+    });
   }
 };
 </script>

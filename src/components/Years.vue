@@ -1,7 +1,9 @@
 <template>
   <div class="navbar-dropdown">
     <div :key="year" v-for="year in years">
-      <router-link to="/years?" class="navbar-item">{{ year }}</router-link>
+      <router-link :to="`/competition/${year}`" class="navbar-item">{{
+        year
+      }}</router-link>
     </div>
   </div>
 </template>
