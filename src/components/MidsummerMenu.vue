@@ -10,7 +10,7 @@
           class="navbar-burger burger"
           aria-label="menu"
           aria-expanded="false"
-          data-target="navbarBasicExample"
+          data-target="navbarMidsummer"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -18,7 +18,7 @@
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarMidsummer" class="navbar-menu">
         <div class="navbar-start">
           <router-link to="/rules" class="navbar-item"
             >Regler och Stadgar</router-link

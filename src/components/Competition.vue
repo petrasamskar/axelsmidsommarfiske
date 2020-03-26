@@ -46,6 +46,7 @@ export default {
       ]
     };
   },
+
   created: function() {
     getParticipants(this.year).then(result => {
       this.participants = result.data;

@@ -27,7 +27,6 @@ export async function getImages() {
 }
 
 export function addParticipant(state) {
-  console.log("add participant");
   return axios({
     method: "post",
     url: "/api/adscores",

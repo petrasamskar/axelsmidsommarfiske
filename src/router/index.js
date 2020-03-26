@@ -5,6 +5,7 @@ import Rules from "@/components/Rules";
 import Images from "@/components/Images";
 import Winners from "@/components/Winners";
 import Competition from "@/components/Competition";
+import Admin from "@/components/Admin";
 
 Vue.use(Router);
 
@@ -34,11 +35,11 @@ export default new Router({
       path: "/competition/:year",
       name: "Competition",
       component: Competition
-    }
-    /* {
-      path: '/admin',
-      name: 'Admin',
+    },
+    {
+      path: "/admin",
+      name: "Admin",
       component: Admin
-    } */
+    }
   ]
 });
