@@ -113,7 +113,7 @@ app.get("/api/winners", function(req, res) {
 
 //will get all images from the folder
 app.get("/api/images", function(req, res) {
-  fs.readdir("./public/images", function(err, files) {
+  fs.readdir("./public/images/other", function(err, files) {
     if (err) res.send(err);
     res.json(files);
   });

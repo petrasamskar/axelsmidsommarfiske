@@ -4,7 +4,7 @@
       <h1>Bilder</h1>
       <div :key="image" v-for="image in images">
         <figure class="image">
-          <img :src="'images/' + image" />
+          <img :src="'images/other/' + image" />
         </figure>
       </div>
     </div>

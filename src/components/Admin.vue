@@ -72,7 +72,6 @@
 import { addParticipant } from "../CompetitionService";
 export default {
   name: "Admin",
-  el: "#admin-form",
   data: function() {
     return {
       participant: {
