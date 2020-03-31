@@ -48,9 +48,19 @@ export default {
   },
 
   created: function() {
-    getParticipants(this.year).then(result => {
-      this.participants = result.data;
-    });
+    this.getCompetition();
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.year = to.params.year;
+    this.getCompetition();
+    next();
+  },
+  methods: {
+    getCompetition: function() {
+      getParticipants(this.year).then(result => {
+        this.participants = result.data;
+      });
+    }
   }
 };
 </script>
