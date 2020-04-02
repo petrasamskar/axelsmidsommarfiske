@@ -2,8 +2,8 @@
   <div>
     <nav class="is-white navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"
-          ><img src="../assets/midsommarstang.jpg" width="40" height="80"
+        <router-link to="/"
+          ><img src="../assets/fish.png" width="100" height="100"
         /></router-link>
         <a
           role="button"

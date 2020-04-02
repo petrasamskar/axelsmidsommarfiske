@@ -12,6 +12,7 @@
         </figure>
       </div>
       <div class="column content">
+        <h1>{{ this.year }}</h1>
         <table class="table is-hoverable is-fullwidth is-striped">
           <thead>
             <tr>
