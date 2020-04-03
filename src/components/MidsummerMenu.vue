@@ -11,6 +11,8 @@
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarMidsummer"
+          @click="isOpen = !isOpen"
+          v-bind:class="{ 'is-active': isOpen }"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -18,7 +20,11 @@
         </a>
       </div>
 
-      <div id="navbarMidsummer" class="navbar-menu">
+      <div
+        id="navbarMidsummer"
+        class="navbar-menu"
+        v-bind:class="{ 'is-active': isOpen }"
+      >
         <div class="navbar-start">
           <router-link to="/rules" class="navbar-item"
             >Regler och Stadgar</router-link
@@ -49,6 +55,11 @@ import Years from "./Years.vue";
 
 export default {
   name: "MidsummerMenu",
+  data: function() {
+    return {
+      isOpen: false
+    };
+  },
   components: {
     Clock: Clock,
     Years: Years
