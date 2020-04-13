@@ -5,7 +5,7 @@ var fs = require("fs");
 var path = require("path"); //behövs den??
 var app = express();
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/dist")));
 
 //now we should configure the API to use bodyParser and look for
 //JSON data in the request body
